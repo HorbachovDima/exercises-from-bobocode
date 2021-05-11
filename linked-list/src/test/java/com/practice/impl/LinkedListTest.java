@@ -31,4 +31,25 @@ public class LinkedListTest {
 
         assertThat(list.size()).isEqualTo(3);
     }
+
+    @Test
+    void size() {
+        list = MyLinkedList.of(1, 2, 3, 4, 5, 6);
+        int size = list.size();
+        assertThat(size).isEqualTo(6);
+    }
+
+    @Test
+    void getFirstElement() {
+        list = MyLinkedList.of(22, 100);
+        int firstElement = list.getFirst();
+        assertThat(firstElement).isEqualTo(22);
+    }
+
+    @Test
+    void getLastElement() {
+        list = MyLinkedList.of(123, 222);
+        int lastElement = list.getLast();
+        assertThat(lastElement).isEqualTo(222);
+    }
 }

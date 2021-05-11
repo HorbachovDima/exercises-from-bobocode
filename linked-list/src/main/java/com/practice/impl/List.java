@@ -10,4 +10,7 @@ public interface List<T> {
 
     int size();
 
+    T getFirst();
+
+    T getLast();
 }

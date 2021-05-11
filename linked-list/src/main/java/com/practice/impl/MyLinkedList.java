@@ -1,5 +1,6 @@
 package com.practice.impl;
 
+import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.stream.Stream;
 
@@ -71,5 +72,23 @@ public class MyLinkedList<T> implements List<T> {
     @Override
     public int size() {
         return size;
+    }
+
+    @Override
+    public T getFirst() {
+        isExist();
+        return head.element;
+    }
+
+    @Override
+    public T getLast() {
+        isExist();
+        return tail.element;
+    }
+
+    private void isExist() {
+        if (head == null) {
+            throw new NoSuchElementException();
+        }
     }
 }
