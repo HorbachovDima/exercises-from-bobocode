@@ -4,10 +4,12 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/linked-list/pom.xml" />
+        <option value="$PROJECT_DIR$/larray-list/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/linked-list/array-list/pom.xml" />
         <option value="$PROJECT_DIR$/linked-list/linked-list/pom.xml" />
       </set>
     </option>
