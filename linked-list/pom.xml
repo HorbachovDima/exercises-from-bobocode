@@ -16,7 +16,6 @@
 
     <modules>
         <module>linked-list</module>
-        <module>array-list</module>
         <module>array</module>
     </modules>
 
