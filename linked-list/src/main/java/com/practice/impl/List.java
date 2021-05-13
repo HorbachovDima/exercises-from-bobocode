@@ -13,4 +13,14 @@ public interface List<T> {
     T getFirst();
 
     T getLast();
+
+    void set(int index, T element);
+
+    T remove(int index);
+
+    boolean contains(T element);
+
+    boolean isEmpty();
+
+    void clear();
 }

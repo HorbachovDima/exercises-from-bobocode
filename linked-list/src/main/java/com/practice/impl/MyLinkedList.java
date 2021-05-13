@@ -86,6 +86,70 @@ public class MyLinkedList<T> implements List<T> {
         return tail.element;
     }
 
+    @Override
+    public void set(int index, T element) {
+        Objects.checkIndex(index, size);
+        if (index == 0) {
+            head.element = element;
+        } else if (index == size - 1) {
+            tail.element = element;
+        } else {
+            findNodeByIndex(index).element = element;
+        }
+    }
+
+    @Override
+    public T remove(int index) {
+        Objects.checkIndex(index, size);
+        if (index == 0) {
+            T removedElement = head.element;
+            if (head.next == null) {
+                head = tail = null;
+            }
+            head = head.next;
+            size--;
+            return removedElement;
+        } else {
+            Node<T> previousNode = findNodeByIndex(index - 1);
+            T removedElement = previousNode.next.element;
+            previousNode.next = previousNode.next.next;
+            size--;
+            return removedElement;
+        }
+    }
+
+    @Override
+    public boolean contains(T element) {
+        Objects.requireNonNull(element);
+        if (head != null) {
+            if (element.equals(head.element)) {
+                return true;
+            } else if (element.equals(tail.element)) {
+                return true;
+            } else {
+                Node<T> currentNode = head;
+                for (int i = 0; i < size; i++) {
+                    if (element.equals(currentNode.element)) {
+                        return true;
+                    }
+                    currentNode = currentNode.next;
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+    @Override
+    public void clear() {
+        head = tail = null;
+        size = 0;
+    }
+
     private void isExist() {
         if (head == null) {
             throw new NoSuchElementException();
